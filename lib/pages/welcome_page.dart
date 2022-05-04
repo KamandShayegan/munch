@@ -14,6 +14,11 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   List<String> images = ["welcome_1.JPG", "welcome_2.JPG", "welcome_3.JPG"];
   List<String> headers = ["Burger", "Sushi! YUM", "Pasta"];
+  List<String> desc = [
+    'Juicy and flavorful',
+    'Either cooked or raw',
+    'Handmade and fresh'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +46,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       children: [
                         LargeText(text: headers[index]),
                         const SizedBox(height: 4),
-                        const H2Text(
-                          text: 'Right at your service',
-                        ),
+                        H2Text(text: desc[index]),
                       ],
                     ),
                     Column(
@@ -53,9 +56,11 @@ class _WelcomePageState extends State<WelcomePage> {
                           (dotIndex) => Container(
                             margin: const EdgeInsets.only(top: 4),
                             width: 8,
-                            height: index==dotIndex?25:8,
+                            height: index == dotIndex ? 16 : 8,
                             decoration: BoxDecoration(
-                              color: index==dotIndex?MyColors.primary:MyColors.secondary,
+                                color: index == dotIndex
+                                    ? MyColors.primary
+                                    : MyColors.secondary,
                                 borderRadius: BorderRadius.circular(8)),
                           ),
                         ).toList(),
