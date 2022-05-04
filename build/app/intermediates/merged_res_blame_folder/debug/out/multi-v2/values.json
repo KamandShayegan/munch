@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kamandshayegan/Documents/projects/flutter/sample/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/kamandshayegan/Documents/projects/flutter/munch/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/Users/kamandshayegan/Documents/projects/flutter/sample/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/kamandshayegan/Documents/projects/flutter/munch/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

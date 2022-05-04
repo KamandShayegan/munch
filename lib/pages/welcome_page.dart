@@ -50,11 +50,12 @@ class _WelcomePageState extends State<WelcomePage> {
                       children: [
                         ...List.generate(
                           3,
-                          (index) => Container(
+                          (dotIndex) => Container(
+                            margin: const EdgeInsets.only(top: 4),
                             width: 8,
-                            height: 25,
+                            height: index==dotIndex?25:8,
                             decoration: BoxDecoration(
-                              color: MyColors.primary,
+                              color: index==dotIndex?MyColors.primary:MyColors.secondary,
                                 borderRadius: BorderRadius.circular(8)),
                           ),
                         ).toList(),
