@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/bachelors/bookmark/bookmark_codebase/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/bachelors/bookmark/bookmark_codebase/build" />
+      <excludeFolder url="file://$MODULE_DIR$/bachelors/bookmark/bookmark_codebase/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ES source/customer_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ES source/customer_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ES source/customer_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ES source/shared_code/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ES source/shared_code/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ES source/shared_code/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/darato/build" />
+      <excludeFolder url="file://$MODULE_DIR$/darato/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/darato/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/bloc/bloc_2/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/bloc/bloc_2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/bloc/bloc_2/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/hive_2/untitled/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/hive_2/untitled/build" />
+      <excludeFolder url="file://$MODULE_DIR$/hive_2/untitled/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/hive_2/bloc_tutorial/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/hive_2/bloc_tutorial/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/hive_2/bloc_tutorial/build" />
+      <excludeFolder url="file://$MODULE_DIR$/bloc/bloc_1/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/bloc/bloc_1/build" />
+      <excludeFolder url="file://$MODULE_DIR$/bloc/bloc_1/.pub" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>
