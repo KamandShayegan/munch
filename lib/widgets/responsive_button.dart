@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sample/misc/my_colors.dart';
+import 'package:sample/widgets/texts.dart';
 
 class ResponsiveButton extends StatelessWidget {
   bool? isResponsive;
@@ -10,16 +11,33 @@ class ResponsiveButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {},
-      child: const Icon(
-        Icons.arrow_right_alt,
-        color: Colors.white,
-        size: 30,
-      ),
-      style: TextButton.styleFrom(
-        backgroundColor: MyColors.primary,
-        minimumSize: const Size(112,48),
+    return Flexible(
+      child: TextButton(
+        onPressed: () {},
+        child: Row(
+          mainAxisAlignment: isResponsive == true
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.center,
+          children: [
+            isResponsive == true
+                ? H2Text(
+                    text: '  Place order now',
+                    color: Colors.white,
+                  )
+                : const SizedBox(),
+            const Icon(
+              Icons.arrow_right_rounded,
+              color: Colors.white,
+              size: 30,
+            ),
+          ],
+        ),
+        style: TextButton.styleFrom(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          backgroundColor: MyColors.primary,
+          fixedSize: Size(isResponsive == true ? double.maxFinite : 112, 48),
+        ),
       ),
     );
   }
