@@ -5,4 +5,7 @@ class AppCubit extends Cubit<CubitState> {
   AppCubit() : super(InitialState()) {
     emit(WelcomeState());
   }
+
+  setMainPage() => emit(MainPageState());
+  setDetailPage() => emit(DetailPageState());
 }

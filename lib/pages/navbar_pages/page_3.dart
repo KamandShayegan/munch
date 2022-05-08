@@ -5,7 +5,6 @@ class PageThree extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Container(child: Text("page 3"),));
-
+    return const Center(child: Text("Search"));
   }
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sample/cubit/app_cubits.dart';
 import 'package:sample/misc/my_colors.dart';
 import 'package:sample/widgets/buttons.dart';
 import 'package:sample/widgets/large_texts.dart';
 import 'package:sample/widgets/responsive_button.dart';
 import 'package:sample/widgets/texts.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -19,7 +21,7 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         // margin: EdgeInsets.symmetric(horizontal: 16, vertical: 40),
         height: double.maxFinite,
         width: double.maxFinite,
@@ -38,9 +40,11 @@ class _DetailPageState extends State<DetailPage> {
               child: Row(
                 children: [
                   IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.menu),
-                      color: Colors.white)
+                      onPressed: () {
+                        context.read<AppCubit>().setMainPage();
+                      },
+                      icon: const Icon(Icons.arrow_left),
+                      color: Colors.black)
                 ],
               ),
             ),
@@ -65,7 +69,7 @@ class _DetailPageState extends State<DetailPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
-                          children: [
+                          children: const [
                             SizedBox(width: 0),
                             LargeText(
                               text: 'Pasta',
@@ -73,7 +77,7 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                           ],
                         ),
-                        LargeText(
+                        const LargeText(
                           text: '\$250',
                           color: MyColors.textColor1,
                         ),
@@ -83,7 +87,7 @@ class _DetailPageState extends State<DetailPage> {
                     Row(
                       children: [
                         const SizedBox(width: 2),
-                        Icon(
+                        const Icon(
                           Icons.location_on,
                           color: MyColors.textColor2,
                           size: 16,
@@ -149,7 +153,7 @@ class _DetailPageState extends State<DetailPage> {
                                       size: 50),
                                 ))),
                     SizedBox(height: 24),
-                    LargeText(
+                    const LargeText(
                       text: 'Description',
                       color: Colors.black,
                       size: 20,
@@ -176,8 +180,9 @@ class _DetailPageState extends State<DetailPage> {
                         backgroundColor: Colors.white,
                         borderColor: Colors.black54,
                         size: 48),
-                    SizedBox(width: 16),
+                    const SizedBox(width: 16),
                     ResponsiveButton(
+                      onTap: () {},
                       isResponsive: true,
                       width: size.width * 0.9,
                       //without overflow takes as much space as possible

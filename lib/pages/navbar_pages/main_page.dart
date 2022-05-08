@@ -13,32 +13,33 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List<Widget> pages = const [HomePage() ,PageTwo(), PageThree(), PageFour()];
+  List<Widget> pages = const [HomePage(), PageTwo(), PageThree(), PageFour()];
   int currentIndex = 0;
-  void onTap(int index){
+  void onTap(int index) {
     setState(() {
       currentIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTap,
-        currentIndex: currentIndex,
-        selectedItemColor: MyColors.primary,
-        unselectedItemColor: MyColors.secondary.withOpacity(0.7),
-        unselectedFontSize: 0,
-        selectedFontSize: 10,
-        elevation: 0,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.apps), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'Bar Chart'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'My')
-        ]
-      ),
+          onTap: onTap,
+          currentIndex: currentIndex,
+          selectedItemColor: MyColors.primary,
+          unselectedItemColor: MyColors.secondary.withOpacity(0.7),
+          unselectedFontSize: 0,
+          selectedFontSize: 10,
+          elevation: 0,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.apps), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.bar_chart), label: 'Top Places'),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile')
+          ]),
     );
   }
 }

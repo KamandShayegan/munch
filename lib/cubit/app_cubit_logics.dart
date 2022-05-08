@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sample/cubit/app_cubit_states.dart';
 import 'package:sample/cubit/app_cubits.dart';
+import 'package:sample/pages/detail_page.dart';
+import 'package:sample/pages/navbar_pages/main_page.dart';
 import 'package:sample/pages/welcome_page.dart';
 
 class AppCubitLogics extends StatefulWidget {
@@ -18,7 +20,11 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
       body: BlocBuilder<AppCubit, CubitState>(
         builder: (context, state) {
           if (state is WelcomeState) {
-            return WelcomePage();
+            return const WelcomePage();
+          } else if (state is MainPageState) {
+            return const MainPage();
+          } else if (state is DetailPageState) {
+            return const DetailPage();
           } else {
             return Container();
           }

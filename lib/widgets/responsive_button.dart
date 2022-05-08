@@ -5,15 +5,17 @@ import 'package:sample/widgets/texts.dart';
 class ResponsiveButton extends StatelessWidget {
   bool? isResponsive;
   double? width;
+  final VoidCallback onTap;
 
-  ResponsiveButton({Key? key, this.isResponsive = false, this.width})
+  ResponsiveButton(
+      {Key? key, this.isResponsive = false, this.width, required this.onTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Flexible(
       child: TextButton(
-        onPressed: () {},
+        onPressed: onTap,
         child: Row(
           mainAxisAlignment: isResponsive == true
               ? MainAxisAlignment.spaceBetween

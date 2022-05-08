@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sample/cubit/app_cubits.dart';
 import 'package:sample/misc/my_colors.dart';
 import 'package:sample/widgets/large_texts.dart';
 import 'package:sample/widgets/texts.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,14 +25,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     TabController _tabController = TabController(length: 4, vsync: this);
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 40),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(Icons.menu, size: 30, color: Colors.black54),
+                const Icon(Icons.menu, size: 30, color: Colors.black54),
                 Container(
                   height: 50,
                   width: 50,
@@ -47,21 +49,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               alignment: Alignment.centerLeft,
               child: TabBar(
                 labelColor: Colors.black,
-                labelPadding: EdgeInsets.only(left: 16, right: 16),
+                labelPadding: const EdgeInsets.only(left: 16, right: 16),
                 indicatorSize: TabBarIndicatorSize.label,
                 indicator: DotIndicator(color: MyColors.primary, radius: 3),
                 unselectedLabelColor: Colors.grey,
                 isScrollable: true,
                 controller: _tabController,
-                tabs: [
-                  const Tab(text: "FastFood"),
-                  const Tab(text: "Thai"),
-                  const Tab(text: "Sushi"),
-                  const Tab(text: "Indian"),
+                tabs: const [
+                  Tab(text: "FastFood"),
+                  Tab(text: "Thai"),
+                  Tab(text: "Sushi"),
+                  Tab(text: "Indian"),
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               height: size.height * 0.3,
               child: TabBarView(
                 controller: _tabController,
@@ -69,22 +71,27 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 3,
-                    itemBuilder: (BuildContext context, int index) => Container(
-                      margin: const EdgeInsets.only(left: 8, top: 16),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.red,
-                        image: DecorationImage(
-                            image: AssetImage('img/welcome_1.JPG'),
-                            fit: BoxFit.cover),
+                    itemBuilder: (BuildContext context, int index) => InkWell(
+                      onTap: () {
+                        context.read<AppCubit>().setDetailPage();
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(left: 8, top: 16),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.red,
+                          image: const DecorationImage(
+                              image: AssetImage('img/welcome_1.JPG'),
+                              fit: BoxFit.cover),
+                        ),
+                        height: double.maxFinite,
+                        width: 180,
                       ),
-                      height: double.maxFinite,
-                      width: 180,
                     ),
                   ),
-                  Text('by'),
-                  Text('three'),
-                  Text('three'),
+                  const Center(child: Text('Thai Food')),
+                  const Center(child: Text('Sushi')),
+                  const Center(child: Text('Indian')),
                 ],
               ),
             ),
@@ -96,7 +103,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 H2Text(text: 'see all', color: MyColors.secondary, size: 14)
               ],
             ),
-            Container(
+            SizedBox(
               // color: Colors.red,
               height: size.height * 0.14,
               child: ListView.builder(
@@ -105,17 +112,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 itemBuilder: (_, int index) => Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      margin: const EdgeInsets.only(right: 12, left: 8, top: 0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        image: DecorationImage(
-                            image: AssetImage(
-                                'img/' + images.keys.elementAt(index)),
-                            fit: BoxFit.cover),
+                    InkWell(
+                      onTap: () {
+                        context.read<AppCubit>().setDetailPage();
+                      },
+                      child: Container(
+                        margin:
+                            const EdgeInsets.only(right: 12, left: 8, top: 0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  'img/' + images.keys.elementAt(index)),
+                              fit: BoxFit.cover),
+                        ),
+                        height: 70,
+                        width: 70,
                       ),
-                      height: 70,
-                      width: 70,
                     ),
                     const SizedBox(height: 8),
                     H2Text(
@@ -141,7 +154,6 @@ class DotIndicator extends Decoration {
 
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
-    // TODO: implement createBoxPainter
     return _CirclePainter(color: color, radius: radius);
   }
 }
