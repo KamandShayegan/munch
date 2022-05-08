@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sample/cubit/app_cubits.dart';
-import 'package:sample/misc/my_colors.dart';
+import 'package:sample/utils/my_colors.dart';
 import 'package:sample/widgets/buttons.dart';
 import 'package:sample/widgets/large_texts.dart';
 import 'package:sample/widgets/responsive_button.dart';

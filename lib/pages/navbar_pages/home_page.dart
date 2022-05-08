@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sample/cubit/app_cubits.dart';
-import 'package:sample/misc/my_colors.dart';
+import 'package:sample/utils/my_colors.dart';
 import 'package:sample/widgets/large_texts.dart';
 import 'package:sample/widgets/texts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,10 +14,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Map<String, String> images = {
-    "welcome_2.JPG": "sushi",
-    "welcome_3.JPG": "pasta",
-    "welcome_1.JPG": "burger",
-    "pizza.JPG": "pizza",
+    "welcome_2.JPG": "Taco Bell",
+    "welcome_3.JPG": "Subway",
+    "welcome_1.JPG": "Burger King",
+    "pizza.JPG": "Pizza Hut",
   };
   @override
   Widget build(BuildContext context) {
@@ -96,13 +96,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
             ),
             const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const LargeText(text: 'ِExplore more places', size: 16),
-                H2Text(text: 'see all', color: MyColors.secondary, size: 14)
-              ],
-            ),
+            const LargeText(text: 'ِExplore more places', size: 16),
             SizedBox(
               // color: Colors.red,
               height: size.height * 0.14,

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sample/cubit/app_cubits.dart';
-import 'package:sample/misc/my_colors.dart';
+import 'package:sample/utils/my_colors.dart';
 import 'package:sample/widgets/large_texts.dart';
 import 'package:sample/widgets/responsive_button.dart';
 import 'package:sample/widgets/texts.dart';
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class WelcomePage extends StatefulWidget {
